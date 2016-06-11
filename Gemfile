@@ -23,6 +23,8 @@ gem 'bootstrap-sass-extras'
 gem 'bootstrap_form'
 gem 'font-awesome-rails'
 gem 'rack-utf8_sanitizer'
+gem 'omniauth'
+gem 'omniauth-slack'
 
 group :development, :test do
   gem 'pry-rails'
