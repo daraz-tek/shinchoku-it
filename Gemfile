@@ -1,43 +1,62 @@
 source 'https://rubygems.org'
 
+ruby '2.3.1'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '>= 5.0.0.rc1', '< 5.1'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-# Use Puma as the app server
-gem 'puma', '~> 3.0'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.1.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
-
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platform: :mri
+  gem 'sqlite3'
+end
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+
+gem 'puma', '~> 3.0'
+gem 'sassc-rails'
+gem 'uglifier', '>= 1.3.0'
+gem 'coffee-rails', '~> 4.1.0'
+gem 'jquery-rails'
+gem 'slim-rails'
+gem 'bootstrap-sass'
+gem 'bootstrap-sass-extras'
+gem 'bootstrap_form'
+gem 'font-awesome-rails'
+gem 'rack-utf8_sanitizer'
+
+group :development, :test do
+  gem 'pry-rails'
+  gem 'pry-doc', require: false
+  gem 'pry-coolline'
+  gem 'pry-byebug', platforms: [:mri]
+  gem 'hirb'
+  gem 'hirb-unicode'
+  gem 'awesome_print'
+  gem 'minitest-rails', '3.0.0.rc1'
 end
 
 group :development do
-  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  gem 'web-console'
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'listen', '~> 3.0.5'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'bullet'
+  gem 'annotate'
+  gem 'quiet_assets'
+  gem 'rubocop', require: false
+  gem 'meta_request'
+  gem 'rack-mini-profiler'
+  gem 'guard'
+  gem 'guard-bundler'
+  gem 'guard-minitest'
+end
+
+group :test do
+  gem 'minitest-rails-capybara'
+  gem 'minitest-power_assert'
+  gem 'minitest-bang'
+  gem 'minitest-stub_any_instance'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
