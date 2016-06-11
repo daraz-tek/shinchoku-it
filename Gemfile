@@ -25,6 +25,7 @@ gem 'font-awesome-rails'
 gem 'rack-utf8_sanitizer'
 gem 'omniauth'
 gem 'omniauth-slack'
+gem 'qiita-markdown'
 
 group :development, :test do
   gem 'pry-rails'
