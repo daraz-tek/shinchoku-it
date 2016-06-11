@@ -21,5 +21,16 @@ module ShinchokuIt
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+    config.i18n.enforce_available_locales = true
+    config.i18n.default_locale = :ja
+
+    config.generators do |g|
+      g.javascripts false
+      g.stylesheets false
+      g.helper false
+      g.test_framework :minitest, spec: true, fixture: true
+    end
+
+    config.middleware.insert_before 0, Rack::UTF8Sanitizer
   end
 end
