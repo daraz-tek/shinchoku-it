@@ -2,8 +2,8 @@ h1 test for slack authentication
 
 - if session[:user]
   p = session[:user].to_json
-  = link_to 'logout', auth_path, method: :delete
+  = link_to 'logout', auth_path, method: :delete, class: "btn btn-default"
 - else
-  = link_to 'login by slack', '/auth/slack'
+  = link_to 'login by slack', '/auth/slack', class: "btn btn-default"
 
 = markdown_example

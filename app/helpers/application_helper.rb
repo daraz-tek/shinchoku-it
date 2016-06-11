@@ -14,9 +14,16 @@ module ApplicationHelper
 
 Hello Kitty, Hello Kitty, Hello Kitty Good Pxxxy and Txxxy :cat: :dog: :bow:
 
+### Headline 3
+
+foo, bar, baz
+hoge, fuga
+
 ```ruby:hello_kitty.rb
 def hello_kitty
   puts 'Hello Kitty'
+  puts "iiiiiiiiii"
+  puts "wwwwwwwwww"
 end
 ```
 EOS
