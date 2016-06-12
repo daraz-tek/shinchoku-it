@@ -1,12 +1,16 @@
 class SessionsController < ApplicationController
   def create
-    data = request.env['omniauth.auth']
-    session[:user] = data.info
-    redirect_to root_path, notice: 'login!'
+    profile = SocialProfile.find_by_omniauth(request.env['omniauth.auth'])
+    if profile.save
+      session[:user_id] = profile.user.id
+      redirect_to root_path, notice: 'login!'
+    else
+      # TODO: raise error
+    end
   end
 
   def destroy
-    session[:user] = nil
+    session[:user_id] = nil
     redirect_to root_path, notice: 'logout!'
   end
 end
