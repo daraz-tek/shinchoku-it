@@ -1,5 +1,11 @@
 p#notice = notice
 
+p
+  strong Title:
+  = @report.title
+p
+  strong Content:
+  = @report.content
 
 = link_to 'Edit', edit_report_path(@report)
 '|

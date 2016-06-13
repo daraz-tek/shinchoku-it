@@ -15,7 +15,7 @@ describe ReportsController do
 
   it "creates report" do
     expect {
-      post reports_url, params: { report: {  } }
+      post reports_url, params: { report: { content: report.content, title: report.title } }
     }.must_change "Report.count"
 
     must_redirect_to report_path(Report.last)
@@ -32,7 +32,7 @@ describe ReportsController do
   end
 
   it "updates report" do
-    patch report_url(@report), params: { report: {  } }
+    patch report_url(@report), params: { report: { content: report.content, title: report.title } }
     must_redirect_to report_path(report)
   end
 
