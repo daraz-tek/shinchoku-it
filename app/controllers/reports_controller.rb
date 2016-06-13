@@ -3,7 +3,7 @@ class ReportsController < ApplicationController
 
   # GET /reports
   def index
-    @reports = Report.all
+    @reports = current_user.reports
   end
 
   # GET /reports/1
@@ -12,7 +12,7 @@ class ReportsController < ApplicationController
 
   # GET /reports/new
   def new
-    @report = Report.new
+    @report = current_user.reports.build
   end
 
   # GET /reports/1/edit
@@ -21,7 +21,7 @@ class ReportsController < ApplicationController
 
   # POST /reports
   def create
-    @report = Report.new(report_params)
+    @report = current_user.reports.build(report_params)
 
     if @report.save
       redirect_to @report, notice: 'Report was successfully created.'
@@ -48,7 +48,7 @@ class ReportsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_report
-      @report = Report.find(params[:id])
+      @report = current_user.reports.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.

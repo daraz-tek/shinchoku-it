@@ -4,4 +4,6 @@ Rails.application.routes.draw do
 
   get 'auth/:provider/callback', to: 'sessions#create'
   delete 'auth', to: 'sessions#destroy'
+
+  resources :reports
 end

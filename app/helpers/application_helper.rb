@@ -1,18 +1,5 @@
 module ApplicationHelper
 
-  def current_user
-    @current_user ||= User.find_by(id: session[:user_id])
-  end
-
-  def current_user?
-    !!current_user
-  end
-  alias_method :logged_in?, :current_user?
-
-  def current_team
-    @current_team ||= current_user.team
-  end
-
   def qiita_markdown markdown
     processor = Qiita::Markdown::Processor.new
     content_tag :div, class: 'markdownContent markdownContent-headingEnabled' do
