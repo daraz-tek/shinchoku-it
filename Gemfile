@@ -28,6 +28,7 @@ gem 'omniauth-slack'
 gem 'qiita-markdown'
 gem 'activemodel-serializers-xml' # for draper rails5
 gem 'draper', github: 'drapergem/draper', branch: 'rails-5'
+gem 'autosize-rails'
 
 group :development, :test do
   gem 'pry-rails'

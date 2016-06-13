@@ -27,12 +27,10 @@ html lang="en"
             span.icon-bar
             span.icon-bar
             span.icon-bar
-          a.navbar-brand href="#" ShinchokuIt
+          = link_to t('apptitle'), root_path, class: "navbar-brand"
         .navbar-collapse.collapse.navbar-responsive-collapse
           ul.nav.navbar-nav
-            li.active= link_to "Link 1", "#"
-            li= link_to "Link 2", "#"
-            li= link_to "Link 3", "#"
+            li.active= link_to "Report", reports_path
 
     .container
       .row
@@ -44,9 +42,7 @@ html lang="en"
             h3 Sidebar
             ul.nav.nav-list
               li.nav-header Sidebar
-              li= link_to "Link 1", "#"
-              li= link_to "Link 2", "#"
-              li= link_to "Link 3", "#"
+              li.active= link_to "Report", reports_path
 
       footer
         p &copy; Company 2016

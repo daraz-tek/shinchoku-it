@@ -140,8 +140,8 @@ ja:
       prompt: 選択してください
     submit:
       create: "%{model}を登録する"
-      submit: "%{model}保存する"
-      update: "%{model}更新する"
+      submit: "%{model}を保存する"
+      update: "%{model}を更新する"
   number:
     currency:
       format:

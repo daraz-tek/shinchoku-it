@@ -1,12 +1,9 @@
 p#notice = notice
 
-p
-  strong Title:
-  = @report.title
-p
-  strong Content:
-  =  @report.markdowned_content
+= bootstrap_form_for @report do |f|
+  = f.static_control :title
+  = f.static_control :markdowned_content
 
-= link_to 'Edit', edit_report_path(@report)
-'|
-= link_to 'Back', reports_path
+= link_to 'Edit', edit_report_path(@report), class: 'btn btn-default'
+= link_to 'Destroy', @report, data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-default'
+= link_to 'Back', reports_path, class: 'btn btn-default'

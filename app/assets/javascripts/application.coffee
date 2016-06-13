@@ -13,4 +13,8 @@
 #= require jquery
 #= require jquery_ujs
 #= require bootstrap-sprockets
+#= require jquery.autosize
 #= require_tree .
+
+$ ->
+  $('textarea').autosize()
