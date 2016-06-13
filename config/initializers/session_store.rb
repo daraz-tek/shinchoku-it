@@ -5,8 +5,18 @@ begin
 rescue LoadError
 end
 
+default_options = {
+  key: '_shinchoku-it_session',
+  expire_after: 2.weeks,
+}
+
 if defined? ActionDispatch::Session::DalliStore
-  Rails.application.config.session_store :dalli_store, key: '_shinchoku-it_session'
+  if ENV["MEMCACHEDCLOUD_SERVERS"]
+    Rails.application.config.session_store :dalli_store, ENV["MEMCACHEDCLOUD_SERVERS"].split(','),
+      default_options.merge(username: ENV["MEMCACHEDCLOUD_USERNAME"], password: ENV["MEMCACHEDCLOUD_PASSWORD"])
+  else
+    Rails.application.config.session_store :dalli_store, default_options
+  end
 else
-  Rails.application.config.session_store :cookie_store, key: '_shinchoku-it_session'
+  Rails.application.config.session_store :cookie_store, default_options
 end
