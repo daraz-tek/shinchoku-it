@@ -17,4 +17,12 @@ module Authorizable
   def current_team
     @current_team ||= current_user.team
   end
+
+  module ClassMethods
+    def login_required
+      before_action do |controller|
+        redirect_to root_path, notice: "Please log in, first." unless logged_in?
+      end
+    end
+  end
 end

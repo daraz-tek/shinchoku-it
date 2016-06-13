@@ -26,6 +26,8 @@ gem 'rack-utf8_sanitizer'
 gem 'omniauth'
 gem 'omniauth-slack'
 gem 'qiita-markdown'
+gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml' # for draper rails5 support
+gem 'draper'
 
 group :development, :test do
   gem 'pry-rails'

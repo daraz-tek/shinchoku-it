@@ -1,4 +1,6 @@
 class ReportsController < ApplicationController
+  login_required
+
   before_action :set_report, only: [:show, :edit, :update, :destroy]
 
   # GET /reports
@@ -48,7 +50,7 @@ class ReportsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_report
-      @report = current_user.reports.find(params[:id])
+      @report = current_user.reports.find(params[:id]).decorate
     end
 
     # Only allow a trusted parameter "white list" through.
