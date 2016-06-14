@@ -7,7 +7,9 @@ module Authorizable
   end
 
   def current_user
-    @current_user ||= User.find_by(id: session[:user_id])
+    @current_user ||= User.find_by(id: session[:user_id])&.decorate.tap do |u|
+      Time.zone = Time.find_zone(u&.time_zone)
+    end
   end
 
   def current_user?

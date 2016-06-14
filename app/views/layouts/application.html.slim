@@ -31,6 +31,12 @@ html lang="en"
         .navbar-collapse.collapse.navbar-responsive-collapse
           ul.nav.navbar-nav
             li.active= link_to "Report", reports_path
+          - if logged_in?
+            ul.nav.navbar-nav.navbar-right
+              li= link_to '#' do
+                span= current_user.avatar_tag avatar_size: :small
+                | &nbsp;
+                span= current_user.nickname
 
     .container
       .row
