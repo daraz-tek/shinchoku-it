@@ -1,19 +1,26 @@
 h1 Listing reports
 
-table.table.table-hover
-  thead
-    tr
-      th = Report.human_attribute_name(:title)
-      th = Report.human_attribute_name(:created_at)
-      th = Report.human_attribute_name(:updated_at)
+ul.nav.nav-tabs
+  li{role="presentation", class="#{'active' if controller_name == 'reports'}"}
+    = link_to 'すべて', reports_path
+  li{role="presentation", class="#{'active' if controller_name == 'drafts'}"}
+    = link_to 'したがき', reports_drafts_path
+  li{role="presentation", class="#{'active' if controller_name == 'publications'}"}
+    = link_to '公開済み', reports_publications_path
+.tab-content
+  .tab-pane.active
+    table.table.table-hover
+      thead
+        tr
+          th = Report.human_attribute_name(:title)
+          th = Report.human_attribute_name(:created_at)
+          th = Report.human_attribute_name(:updated_at)
 
-  tbody
-    - @reports.each do |report|
-      tr
-        td = link_to report.title, report
-        td = l report.created_at
-        td = l report.updated_at
-
-br
+      tbody
+        - @reports.each do |report|
+          tr
+            td = link_to report.title, report
+            td = l report.created_at
+            td = l report.updated_at
 
 = link_to 'New Report', new_report_path, class: 'btn btn-default'

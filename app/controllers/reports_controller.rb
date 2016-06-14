@@ -24,6 +24,7 @@ class ReportsController < ApplicationController
   # POST /reports
   def create
     @report = current_user.reports.build(report_params)
+    @report.status = :draft if params.key?(:draft)
 
     if @report.save
       redirect_to @report, notice: 'Report was successfully created.'

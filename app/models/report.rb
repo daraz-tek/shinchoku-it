@@ -10,5 +10,5 @@ class Report < ApplicationRecord
     length: { maximum: 4096 },
   }
 
-  enum status: { draft: 0, published: 1 }
+  enum status: { published: 0, draft: 1 }
 end
