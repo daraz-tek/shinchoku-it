@@ -18,3 +18,4 @@
 
 $ ->
   $('textarea').autosize()
+  $('a[href^=http]:not(:has(img))').attr('target', '_blank').addClass("external")
