@@ -11,14 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160613113914) do
+ActiveRecord::Schema.define(version: 20160614093842) do
 
   create_table "reports", force: :cascade do |t|
     t.integer  "user_id"
-    t.string   "title",      limit: 128,  null: false
-    t.text     "content",    limit: 4096, null: false
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.string   "title",      limit: 128,              null: false
+    t.text     "content",    limit: 4096,             null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.integer  "status",     limit: 1,    default: 0, null: false
     t.index ["user_id"], name: "index_reports_on_user_id"
   end
 
