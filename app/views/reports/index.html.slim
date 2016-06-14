@@ -2,11 +2,11 @@ h1 Listing reports
 
 ul.nav.nav-tabs
   li{role="presentation", class="#{'active' if controller_name == 'reports'}"}
-    = link_to 'すべて', reports_path
+    = link_to t('all_report'), reports_path
   li{role="presentation", class="#{'active' if controller_name == 'drafts'}"}
-    = link_to 'したがき', reports_drafts_path
+    = link_to t('draft'), reports_drafts_path
   li{role="presentation", class="#{'active' if controller_name == 'publications'}"}
-    = link_to '公開済み', reports_publications_path
+    = link_to t('publication'), reports_publications_path
 .tab-content
   .tab-pane.active
     table.table.table-hover
