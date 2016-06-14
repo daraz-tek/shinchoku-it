@@ -18,3 +18,4 @@
 
 $ ->
   $('textarea').autosize()
+  $('a[href^=http]').attr('target', '_blank')

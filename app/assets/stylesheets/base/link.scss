@@ -1,0 +1,9 @@
+
+a[target=_blank] {
+  &:after {
+    content: " \f08e";
+    font: 14px/1 FontAwesome;
+    color: $gray;
+  }
+}
+
