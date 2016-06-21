@@ -1,6 +1,8 @@
 ---
 ja:
   apptitle: "Shinchoku It!"
+  sign_in: "Slack でログイン"
+  sign_out: "ログアウト"
   home: "ホーム"
   save_as_draft: "下書きとして保存"
   all_report: "すべて"
