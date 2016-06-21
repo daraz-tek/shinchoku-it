@@ -1,7 +1,10 @@
 ---
 ja:
   apptitle: "Shinchoku It!"
+  home: "ホーム"
   save_as_draft: "下書きとして保存"
   all_report: "すべて"
   draft: "下書き"
   publication: "公開済み"
+  report: "レポート"
+  new_report: "新しいレポート"

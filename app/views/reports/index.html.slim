@@ -1,5 +1,4 @@
 - breadcrumb :reports
-h1 Listing reports
 
 ul.nav.nav-tabs
   li{role="presentation", class="#{'active' if controller_name == 'reports'}"}
@@ -10,18 +9,25 @@ ul.nav.nav-tabs
     = link_to t('publication'), reports_publications_path
 .tab-content
   .tab-pane.active
+    ul.reports
     table.table.table-hover
       thead
         tr
           th = Report.human_attribute_name(:title)
-          th = Report.human_attribute_name(:created_at)
-          th = Report.human_attribute_name(:updated_at)
+          th
+          th
 
       tbody
         - @reports.each do |report|
           tr
             td = link_to report.title, report
-            td = l report.created_at
-            td = l report.updated_at
+            td = link_to edit_report_path(report), class: "btn btn-info" do
+              | 編集
+              | &nbsp;
+              i.fa.fa-edit
+            td = link_to report, class: "btn btn-danger" do
+              | 削除
+              | &nbsp;
+              i.fa.fa-trash
 
-= link_to 'New Report', new_report_path, class: 'btn btn-default'
+= link_to 'New Report', new_report_path, class: 'btn btn-success'

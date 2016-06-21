@@ -1,9 +1,9 @@
 crumb :root do
-  link "Home", root_path
+  link t('home'), root_path
 end
 
 crumb :reports do
-  link "Reports", reports_path
+  link Report.model_name.human, reports_path
 end
 
 crumb :report do |report|
@@ -12,7 +12,7 @@ crumb :report do |report|
 end
 
 crumb :new_report do
-  link "新しいレポート", new_report_path
+  link t('new_report'), new_report_path
   parent :reports
 end
 
