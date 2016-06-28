@@ -3,6 +3,6 @@ class FeedsController < ApplicationController
 
   # GET /feeds
   def index
-    @reports = current_team.timelines.decorate
+    @reports = current_team.timelines.page(params[:page]).decorate
   end
 end

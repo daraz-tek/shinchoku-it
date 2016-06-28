@@ -30,6 +30,7 @@ gem 'activemodel-serializers-xml' # for draper rails5
 gem 'draper', github: 'drapergem/draper', branch: 'rails-5'
 gem 'autosize-rails'
 gem 'gretel'
+gem 'kaminari'
 
 group :development, :test do
   gem 'pry-rails'

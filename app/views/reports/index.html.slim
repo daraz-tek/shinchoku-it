@@ -6,5 +6,6 @@
   .tab-pane.active
     ul.report-list
       = render partial: 'report', collection: @reports
+    .text-center = paginate @reports
 
 = link_to 'New Report', new_report_path, class: 'btn btn-success'

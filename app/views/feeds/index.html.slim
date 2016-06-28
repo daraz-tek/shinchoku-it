@@ -6,3 +6,4 @@
   .tab-pane.active
     ul.report-list
       = render partial: 'report', collection: @reports
+    .text-center = paginate @reports
