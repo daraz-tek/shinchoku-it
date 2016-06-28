@@ -7,10 +7,9 @@ ul.report-list {
     .heading {
       @extend .panel-heading;
       .report-heading-title {
-        margin: 5px 3px 3px;
+        margin: 5px 3px 3px 0;
         h1 {
           font-size: $font-size-large;
-          margin: auto 3px;
           display: inline-block;
         }
         .status {

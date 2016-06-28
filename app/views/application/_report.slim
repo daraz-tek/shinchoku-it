@@ -3,7 +3,12 @@ li
     .report-heading-action
       small= "created at #{l report.created_at}"
     .report-heading-title
-      h1.report-heading-title= link_to report.title, report
+      h1.report-heading-title
+        = link_to report do
+          = report.user.avatar_tag avatar_size: :small, class: "img-rounded"
+        | &nbsp;
+        = link_to report do
+          span= report.title
       .status
         = report.new_badge
   .body

@@ -1,10 +1,12 @@
 class ReportDecorator < ApplicationDecorator
+  decorates_association :user
+
   def markdowned_content
     h.qiita_markdown object.content
   end
 
   def text
-    Nokogiri::HTML.parse(markdowned_content).text.gsub(/[[:space:]]/, " ").strip
+    h.truncate(Nokogiri::HTML.parse(markdowned_content).text.gsub(/[[:space:]]/, " ").strip, length: 200)
   end
 
   def new_badge
