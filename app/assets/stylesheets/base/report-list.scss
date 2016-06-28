@@ -1,0 +1,25 @@
+
+ul.report-list {
+  @extend .list-unstyled;
+  li {
+    @extend .panel;
+    @extend .panel-default;
+    .heading {
+      @extend .panel-heading;
+      .report-heading-title {
+        margin: 5px 3px 3px;
+        h1 {
+          font-size: $font-size-large;
+          margin: auto 3px;
+          display: inline-block;
+        }
+        .status {
+          display: inline-block;
+        }
+      }
+    }
+    .body {
+      @extend .panel-body;
+    }
+  }
+}

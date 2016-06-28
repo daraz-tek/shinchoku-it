@@ -1,0 +1,8 @@
+- breadcrumb :feeds
+
+= render 'nav_tabs'
+
+.tab-content
+  .tab-pane.active
+    ul.report-list
+      = render partial: 'report', collection: @reports

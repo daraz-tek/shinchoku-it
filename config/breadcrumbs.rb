@@ -2,6 +2,10 @@ crumb :root do
   link t('home'), root_path
 end
 
+crumb :feeds do
+  link t('feed'), feeds_path
+end
+
 crumb :reports do
   link Report.model_name.human, reports_path
 end

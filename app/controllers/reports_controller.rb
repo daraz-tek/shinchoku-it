@@ -5,7 +5,7 @@ class ReportsController < ApplicationController
 
   # GET /reports
   def index
-    @reports = current_user.reports
+    @reports = current_user.reports.decorate
   end
 
   # GET /reports/1

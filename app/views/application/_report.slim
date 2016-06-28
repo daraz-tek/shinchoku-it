@@ -1,0 +1,10 @@
+li
+  .heading
+    .report-heading-action
+      small= "created at #{l report.created_at}"
+    .report-heading-title
+      h1.report-heading-title= link_to report.title, report
+      .status
+        = report.new_badge
+  .body
+    = report.text

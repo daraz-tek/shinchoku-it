@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  login_required only: :destroy
+
   def create
     profile = SocialProfile.find_by_omniauth(request.env['omniauth.auth'])
     if profile.save

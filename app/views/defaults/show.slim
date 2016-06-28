@@ -1,11 +1,16 @@
-- breadcrumb :reports
+- breadcrumb :root
 
-= render 'nav_tabs'
-
+ul.nav.nav-tabs
+  li{role="presentation", class="#{'active' if controller_name == 'defaults'}"}
+    = link_to t('all_report'), reports_path
+  li{role="presentation", class="#{'active' if controller_name == 'drafts'}"}
+    = link_to t('draft'), reports_drafts_path
+  li{role="presentation", class="#{'active' if controller_name == 'publications'}"}
+    = link_to t('publication'), reports_publications_path
 .tab-content
   .tab-pane.active
-    ul.report-list
-      = render partial: 'report', collection: @reports
+    ul.reports
+      = render @feeds
     table.table.table-hover
       thead
         tr
@@ -14,7 +19,7 @@
           th
 
       tbody
-        - @reports.each do |report|
+        - @feeds.each do |report|
           tr
             td = link_to report.title, report
             td = link_to edit_report_path(report), class: "btn btn-info" do
@@ -27,3 +32,4 @@
               i.fa.fa-trash
 
 = link_to 'New Report', new_report_path, class: 'btn btn-success'
+

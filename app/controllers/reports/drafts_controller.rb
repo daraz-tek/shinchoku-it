@@ -3,7 +3,7 @@ class Reports::DraftsController < ApplicationController
 
   # GET /reports/drafts
   def index
-    @reports = current_user.reports.draft
+    @reports = current_user.reports.draft.decorate
     render 'reports/index'
   end
 end
