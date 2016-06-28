@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.3.1'
 
-gem 'rails', '>= 5.0.0.rc1', '< 5.1'
+gem 'rails', '>= 5.0.0.rc2', '< 5.1'
 
 group :development, :test do
   gem 'sqlite3'
@@ -50,7 +50,6 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'bullet'
   gem 'annotate'
-  gem 'quiet_assets'
   gem 'rubocop', require: false
   gem 'meta_request'
   gem 'rack-mini-profiler'
