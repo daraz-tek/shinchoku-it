@@ -1,7 +1,6 @@
 class DefaultsController < ApplicationController
-  login_required
 
-  def show
-    @feeds = current_team.timelines.decorate
+  def index
+    redirect_to feeds_path if logged_in?
   end
 end

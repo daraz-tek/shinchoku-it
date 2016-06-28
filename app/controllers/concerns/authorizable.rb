@@ -23,7 +23,7 @@ module Authorizable
   module ClassMethods
     def login_required **options
       before_action options do |controller|
-        redirect_to sign_in_path, notice: "Please log in, first." unless logged_in?
+        redirect_to root_path, notice: "Please log in, first." unless logged_in?
       end
     end
   end

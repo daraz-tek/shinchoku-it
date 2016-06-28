@@ -1,7 +1,7 @@
 class FeedsController < ApplicationController
   login_required
 
-  # GET /reports
+  # GET /feeds
   def index
     @reports = current_team.timelines.decorate
   end

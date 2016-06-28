@@ -1,0 +1,6 @@
+= form_tag feeds_search_index_path, class: 'navbar-form navbar-left', method: :get, enforce_utf8: false do
+  .input-group
+    = search_field_tag 'q', q, class: 'form-control', placeholder: t('search_from_feeds')
+    .input-group-btn
+      button.btn.btn-default{type="submit"}
+        i.fa.fa-search

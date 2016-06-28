@@ -3,7 +3,7 @@ class Reports::PublicationsController < ApplicationController
 
   # GET /reports/publications
   def index
-    @reports = current_user.reports.published.decorate
+    @reports = current_user.reports.published.order(updated_at: :desc).decorate
     render 'reports/index'
   end
 end

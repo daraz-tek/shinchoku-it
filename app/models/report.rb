@@ -11,4 +11,8 @@ class Report < ApplicationRecord
   }
 
   enum status: { published: 0, draft: 1 }
+
+  scope :search_by, -> keyword do
+    where(arel_table[:title].matches("%#{keyword}%").or arel_table[:content].matches("%#{keyword}%"))
+  end
 end
